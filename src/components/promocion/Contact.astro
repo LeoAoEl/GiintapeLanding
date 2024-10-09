@@ -1,0 +1,69 @@
+---
+import Container from "@components/shared/Container.astro";
+---
+
+<section
+  class="text-darkTeal body-font relative mt-10 py-10 bg-gradient-to-b from-darkTeal to-primary"
+>
+  <Container>
+    <div class="flex flex-col text-center w-full mb-12">
+      <h1 class="text-3xl md:text-5xl font-medium title-font mb-4 text-white">
+        ¿Tienes alguna duda?
+      </h1>
+      <p class="mx-auto leading-relaxed text-2xl text-naranja">
+        Agendemos una sesión para conocerte y conocer las necesidades de tu
+        negocio.
+      </p>
+    </div>
+    <div class="lg:w-1/2 md:w-2/3 mx-auto">
+      <div class="flex flex-wrap -m-2">
+        <div class="p-2 w-1/2">
+          <div class="relative">
+            <label for="name" class="leading-7 text-ls font-bold text-white"
+              >Nombre completo</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="w-full bg-backGround bg-opacity-50 rounded border border-white focus:border-naranja focus:bg-backGround focus:ring-2 focus:ring-amarillo text-base outline-none text-darkTeal py-1 px-3 leading-8 transition-all duration-200 ease-in-out"
+            />
+          </div>
+        </div>
+        <div class="p-2 w-1/2">
+          <div class="relative">
+            <label
+              for="email"
+              class="leading-7 text-lg text-white font-semibold">Correo</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full bg-backGround bg-opacity-50 rounded border border-white focus:border-naranja focus:bg-backGround focus:ring-2 focus:ring-naranja text-base outline-none text-darkTeal py-1 px-3 leading-8 transition-all duration-200 ease-in-out"
+            />
+          </div>
+        </div>
+        <div class="p-2 w-full">
+          <div class="relative">
+            <label
+              for="message"
+              class="leading-7 text-lg text-white font-semibold">Mensaje</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              class="w-full bg-backGround bg-opacity-50 rounded border border-white focus:border-naranja focus:bg-backGround focus:ring-2 focus:ring-naranja h-32 text-base outline-none text-darkTeal py-1 px-3 resize-none leading-6 transition-all duration-200 ease-in-out"
+            ></textarea>
+          </div>
+        </div>
+        <div class="p-2 w-full">
+          <button
+            class="flex mx-auto text-white bg-darkTeal border-0 py-2 px-8 focus:outline-none hover:bg-naranja/90 rounded text-lg"
+            >Contactarme</button
+          >
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

@@ -1,0 +1,11 @@
+---
+import { Picture } from "astro:assets";
+import banner from "@assets/BannerS.svg";
+---
+
+<Picture
+  src={banner}
+  alt="banner"
+  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+  class="min-h-screen w-full bg-cover bg-center bg-no-repeat"
+/>

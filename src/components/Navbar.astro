@@ -1,0 +1,58 @@
+---
+import { Astronav, MenuIcon, MenuItems, StickyHeader } from "astro-navbar";
+import Container from "@components/shared/Container.astro";
+import logo from "@assets/logo.svg";
+import { Image } from "astro:assets";
+import Link from "@components/shared/Link.astro";
+import { Rutas } from "@constants/rutas";
+---
+
+<StickyHeader
+  class="shadow-md p-5 gap-6 text-texto z-20 top-0 transition-all w-full ease-in-out text-white bg-darkTeal"
+  scrollY={100}
+  defaultClass=""
+  activeClass="shadow-xl "
+>
+  <Container>
+    <Astronav closeOnClick>
+      <div
+        class="flex justify-between items-center flex-col lg:flex-row relative w-full"
+      >
+        <div
+          class="flex w-full lg:w-auto items-center justify-center lg:justify-between"
+        >
+          <a
+            href="/"
+            class="text-xl md:text-2xl text-textColor flex items-center transition-all rounded-full px-2 -ml-2"
+          >
+            <Image
+              alt="logo"
+              src={logo}
+              class="w-12 h-auto mr-2"
+              quality={"low"}
+              loading={"eager"}
+              format="avif"
+            />
+            <span class="block text-naranja"> Giintape Innovahue </span>
+          </a>
+          <div class="block lg:hidden ml-4 pt-4 transition-all ease-in-out">
+            <MenuIcon class="w-8 h-8 text-naranja" />
+          </div>
+        </div>
+        <MenuItems class="hidden lg:flex lg:items-center lg:w-auto">
+          <ul
+            class="flex flex-col lg:flex-row lg:gap-2 gap-6 items-center transition-all"
+          >
+            {Rutas.map(({ href, name }) => <Link href={href} name={name} />)}
+          </ul>
+        </MenuItems>
+      </div>
+    </Astronav>
+  </Container>
+
+  <style is:global>
+    .astronav-dropdown:hover .dropdown-toggle {
+      display: block;
+    }
+  </style>
+</StickyHeader>
