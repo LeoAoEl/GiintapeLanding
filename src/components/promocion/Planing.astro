@@ -1,7 +1,7 @@
 ---
 import { PlaningContent } from "@constants/planing";
 import Container from "@components/shared/Container.astro";
-import { Icon } from "astro-icon/components";
+import ComparitionTable from "./ComparitionTable.astro";
 ---
 
 <Container>
@@ -15,54 +15,29 @@ import { Icon } from "astro-icon/components";
       >
     </p>
   </div>
+
   <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {
-      PlaningContent.map((plan) => (
-        <section class="border-4 border-darkTeal rounded-lg ">
-          <div class=" bg-darkTeal text-white text-center  py-4">
+      PlaningContent.map((plan, index) => (
+        <section class={`border-4 border-darkTeal rounded-lg text-darkTeal `}>
+          <div
+            class={` text-darkTeal text-center py-4 ${index === 1 ? "bg-darkTeal text-white" : " border-b-2 border-darkTeal"}`}
+          >
             <h2 class="text-3xl mb-2 font-bold">{plan.name}</h2>
             <p>{plan.description}</p>
           </div>
 
-          <div class="text-darkTeal p-4">
-            <ul class=" flex gap-4 flex-col justify-center p-4">
-              {plan.details.map((detail) => (
-                <li class=" flex items-center leading-tight ">
-                  <Icon
-                    name="check"
-                    size={16}
-                    class=" bg-naranja mr-2  rounded-full text-white shadow-2xl"
-                  />
-                  {detail}
-                </li>
-              ))}
-            </ul>
-
-            <h3 class=" text-center text-3xl mb-2 font-bold">
-              Incluye Gratis:
-            </h3>
-            <ul class="flex gap-4 flex-col justify-center p-4">
-              {plan.free.map((item) => (
-                <li class=" flex items-center leading-tight ">
-                  <Icon
-                    name="check"
-                    size={16}
-                    class=" bg-naranja mr-2  rounded-full text-white shadow-2xl"
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
+          <div class="py-4">
             <div>
               <p class="text-3xl mb-2 font-bold truncate text-center pt-4">
                 {plan.price}/Mes
               </p>
-              <button class=" py-2 px-6 items-center justify-center flex mx-auto rounded-lg bg-darkTeal transition-all hover:bg-naranja text-white">
+              <button class="py-2 px-6 items-center justify-center flex mx-auto rounded-lg bg-darkTeal transition-all hover:bg-naranja text-white">
                 Adquirir
               </button>
             </div>
 
-            <p class=" text-center pt-2">
+            <p class="text-center pt-2">
               <em>{plan.notes}</em>
             </p>
           </div>
@@ -70,4 +45,6 @@ import { Icon } from "astro-icon/components";
       ))
     }
   </section>
+
+  <ComparitionTable />
 </Container>

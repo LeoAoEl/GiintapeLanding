@@ -1,0 +1,54 @@
+---
+import { PlaningContent } from "@constants/planing";
+import Container from "@components/shared/Container.astro";
+---
+
+<div class="mt-12 overflow-x-auto rounded-lg border-2 border-darkTeal">
+  <table class="w-full bg-naranja/60 shadow-md rounded-lg">
+    <thead>
+      <tr class="bg-darkTeal text-white">
+        <th class="p-3 text-left">Característica</th>
+        <th class="p-3 text-center">Plan Básico</th>
+        <th class="p-3 text-center">Plan Despega</th>
+        <th class="p-3 text-center">Plan Avanza</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        PlaningContent[0].caracteristicas.map((_, index) => (
+          <tr class="border-b border-darkTeal">
+            <td class="p-3">{PlaningContent[0].caracteristicas[index]}</td>
+            {PlaningContent.map((plan, planIndex) => (
+              <td
+                class={`p-3 text-center text-darkTeal ${
+                  planIndex === 1 ? " bg-darkTeal/20 font-bold text-xl" : ""
+                }`}
+              >
+                {plan.caracteristicas[index] ? "✓" : "-"}
+              </td>
+            ))}
+          </tr>
+        ))
+      }
+      <tr class="text-darkTeal">
+        <td class="p-3 font-bold">Extras Gratis</td>
+      </tr>
+      {
+        PlaningContent[0].free.map((_, index) => (
+          <tr class="border-b border-darkTeal">
+            <td class="p-3">{PlaningContent[0].free[index]}</td>
+            {PlaningContent.map((plan, planIndex) => (
+              <td
+                class={`p-3 text-center text-darkTeal ${
+                  planIndex === 1 ? " bg-darkTeal/20 font-bold text-xl " : ""
+                }`}
+              >
+                {plan.free[index] ? "✓" : "-"}
+              </td>
+            ))}
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

@@ -5,7 +5,7 @@ export const PlaningContent = [
       "Ideal para quienes van iniciando y buscan lo básico en redes sociales.",
     notes: "Precio del plan NO incluye inversión publicitaria en plataformas.",
     price: "1,549.00 MXN",
-    details: [
+    caracteristicas: [
       "8 posts para Facebook e Instagram",
       "8 historias para Facebook e Instagram",
       "3 Reels",
@@ -25,7 +25,7 @@ export const PlaningContent = [
       "¿Listo para subir de nivel? ¡Dale un impulso a tus redes sociales!",
     notes: "Precio del plan NO incluye inversión publicitaria en plataformas.",
     price: "5,999.00 MXN",
-    details: [
+    caracteristicas: [
       "12 posts para Facebook e Instagram",
       "12 historias para Facebook e Instagram",
       "6 Reels",
@@ -49,7 +49,7 @@ export const PlaningContent = [
       "El plan definitivo para quienes buscan maximizar su presencia digital.",
     notes: "Precio del plan NO incluye inversión publicitaria en plataformas.",
     price: "10,999.00 MXN",
-    details: [
+    caracteristicas: [
       "16 posts para Facebook e Instagram",
       "16 historias para Facebook e Instagram",
       "8 Reels",
